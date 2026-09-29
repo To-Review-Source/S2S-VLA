@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "s2s-vla"
+version = "0.1.1"
+description = "Select to Succeed for frozen vision-language-action policies"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24,<3", "torch>=2.6,<3", "scipy>=1.10,<2"]
+
+[project.optional-dependencies]
+serve = ["fastapi>=0.115,<1", "uvicorn>=0.30,<1"]
+test = ["pytest>=8,<9", "httpx>=0.27,<1", "fastapi>=0.115,<1"]
+
+[project.scripts]
+s2s-vla = "s2s_vla.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
