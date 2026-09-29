@@ -1,0 +1,29 @@
+{
+  "method": {
+    "action_dim": 2,
+    "feature_dim": 7,
+    "horizon": 5,
+    "prefix_length": 3,
+    "candidates": 6,
+    "max_steps": 12,
+    "continuous_indices": [0, 1],
+    "roughness_operator": [[1.0, 0.0], [0.0, 1.0]],
+    "action_scale": [0.22, 0.22],
+    "preferences": [[0.8, 0.1, 0.1], [0.6, 0.3, 0.1], [0.6, 0.1, 0.3], [0.3333333333333333, 0.3333333333333333, 0.3333333333333333]],
+    "rho": 0.05,
+    "pair_temperature": 0.1,
+    "preference_loss_weight": 0.2,
+    "hidden_dim": 64
+  },
+  "runtime_factory": "s2s_vla.adapters.toy:create_runtime",
+  "runtime_kwargs": {"noise": 0.015},
+  "seed": 42,
+  "episodes": 64,
+  "branches": 4,
+  "context_stride": 2,
+  "split_fractions": [0.6, 0.2, 0.1, 0.1],
+  "epochs": 10,
+  "batch_contexts": 8,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001
+}
