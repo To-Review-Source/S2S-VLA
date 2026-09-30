@@ -61,7 +61,7 @@ def run_demo(config, output, device):
     for strategy in ("first", "success", "weighted_sum", "s2s"):
         report = evaluate(config, output / "data", checkpoint, calibration, selection, output / f"test-{strategy}.json", device, strategy)
         results[strategy] = report["summary"]
-    write_json(output / "summary.json", {"runtime": config.runtime_factory, "results": results, "scope": "toy_pipeline_validation" if "adapters.toy" in config.runtime_factory else "adapter_evaluation"})
+    write_json(output / "summary.json", {"runtime": config.runtime_factory, "results": results, "scope": "example_pipeline_validation" if "adapters.example" in config.runtime_factory else "adapter_evaluation"})
     return results
 
 
