@@ -10,7 +10,7 @@ def method():
 
 @pytest.fixture
 def config(method):
-    return ExperimentConfig(method=method, runtime_factory="s2s_vla.adapters.toy:create_runtime", seed=19, episodes=12, branches=3, context_stride=2, epochs=2, batch_contexts=4)
+    return ExperimentConfig(method=method, runtime_factory="s2s_vla.adapters.example:create_runtime", seed=19, episodes=12, branches=3, context_stride=2, epochs=2, batch_contexts=4)
 
 
 @pytest.fixture(scope="session", autouse=True)
